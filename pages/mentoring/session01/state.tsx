@@ -24,7 +24,7 @@ const StatePage: React.FC = () => {
         }}
       />
       <h3>{count}</h3>
-      <Progress type="circle" percent={count * 10} />
+      <Progress type="circle" percent={count * 10} status={"normal"} />
     </>
   );
 };
