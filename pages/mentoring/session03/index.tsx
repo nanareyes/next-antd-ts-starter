@@ -1,17 +1,23 @@
 import randomColor from "randomcolor";
 import React from "react";
+import ColorBoxes from "./ColorBoxes";
+import ColorButton from "./ColorButton";
 
 const Session03Page: React.FC = () => {
-  const colors = Array(10)
+  const colors = Array(5)
     .fill(null)
     .map((_) => randomColor());
   console.log(colors);
 
   // TODO: Borrar la siguiente linea
-  return <></>;
 
   // TODO: Descomentar la siguiente linea
-  //   return <ColorBoxes colors={colors} />;
+  return (
+    <>
+      <ColorBoxes colors={colors} />
+      <ColorButton colors={colors} />
+    </>
+  );
   // TODO: Crear componente ColorBoxes que debe recibir colors como propiedad
   // TODO: Por cada elemento en el array colors, el componente ColorBoxes debe mostrar una caja de width 200 y heigth 100,
   //       usando el valor del elemento como fondo de la caja
