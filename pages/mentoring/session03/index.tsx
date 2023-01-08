@@ -1,13 +1,20 @@
+import React, { useEffect, useState } from "react";
 import randomColor from "randomcolor";
-import React from "react";
 import ColorBoxes from "./ColorBoxes";
 import ColorButton from "./ColorButton";
 
 const Session03Page: React.FC = () => {
-  const colors = Array(5)
-    .fill(null)
-    .map((_) => randomColor());
-  console.log(colors);
+  const [colors, setColors] = useState<string[]>([]);
+
+  useEffect(() => {
+    setColors(generateRandomColors());
+  }, []);
+
+  const generateRandomColors = () => {
+    return Array(5)
+      .fill(null)
+      .map((_) => randomColor());
+  };
 
   // TODO: Borrar la siguiente linea
 
@@ -15,7 +22,7 @@ const Session03Page: React.FC = () => {
   return (
     <>
       <ColorBoxes colors={colors} />
-      <ColorButton colors={colors} />
+      {/* <ColorButton colors={colors} /> */}
     </>
   );
   // TODO: Crear componente ColorBoxes que debe recibir colors como propiedad

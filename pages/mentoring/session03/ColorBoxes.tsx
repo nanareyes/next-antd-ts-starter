@@ -13,7 +13,7 @@ const ColorBoxes: React.FC<Props> = ({ colors }) => {
             key={color}
             style={{ width: 200, height: 100, background: `${color}` }}
           >
-            {color}
+            <span>{color}</span>
           </Card>
         );
       })}
